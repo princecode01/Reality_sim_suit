@@ -77,7 +77,7 @@ html {
 
 
 .bg-home {
-  background-image: url("./assets/home-bg.webp");
+  background-image: url("/home-bg.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
