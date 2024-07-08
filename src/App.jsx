@@ -1,5 +1,5 @@
 import { NextUIProvider } from "@nextui-org/react";
-import { Navigate, RouterProvider, createHashRouter } from "react-router-dom";
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
 
@@ -39,7 +39,7 @@ function App() {
   }, [])
 
 
-  const routes = createHashRouter([
+  const routes = createBrowserRouter([
     {
       path: "/",
       element: <>
