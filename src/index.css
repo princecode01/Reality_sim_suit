@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4;
+  }
+
+  input,
+  textarea {
+    @apply w-full px-3 py-2 border border-dark focus:border-none focus:outline-none focus:border-customBlue focus:ring-2 focus:ring-customBlue;
+  }
+
+  .navbar li a {
+    @apply relative pb-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-hover before:transition-all duration-300;
+  }
+
+  .navbar a:hover,
+  .navbar a:active {
+    @apply before:w-full text-hover;
+  }
+
+  .about-card:hover .about-card-details {
+    @apply h-full;
+  }
+
+  .service-card {
+    @apply basis-[80%] md:basis-[48.5%] lg:basis-[32%] overflow-hidden;
+  }
+
+  .service-card:hover {
+    @apply shadow-lg scale-105;
+  }
+
+  #contacts input,
+  #contacts textarea {
+    @apply border-2 border-red focus:border-customBlue focus:ring-2 focus:ring-customBlue;
+  }
+
+  #gallery img{
+    @apply w-full h-full aspect-auto;
+  }
+
+  .gallery-grid div{
+    @apply w-[90%] sm:w-full justify-self-center shadow-sm shadow-dark;
+  }
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* custom-scrollbar.css */
+.scrollbar {
+  scrollbar-width: auto;
+  scrollbar-color: #FF7D29 #ECB176; /* thumb color and track color */
+  border-radius: 12px;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #ECB176; /* track color */
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #FF7D29; /* thumb color */
+  border-radius: 12px;
+  border: 5px solid #ECB176; /* space around thumb */
+}
+
+
+
+.bg-home {
+  background-image: url("./assets/home-bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.service-card-img {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 215px;
+  margin-bottom: 1.5rem;
+}
+
+.h-home {
+  min-height: calc(100vh - 4rem);
+}
+
+.h-custom {
+  height: calc(100vh - 4rem);
+}
