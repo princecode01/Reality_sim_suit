@@ -45,6 +45,15 @@
   .gallery-grid div{
     @apply w-[90%] sm:w-full justify-self-center shadow-sm shadow-dark;
   }
+  
+  .user-info div,
+  .session{
+    @apply flex flex-wrap
+  }
+  .user-info div p,
+  .session p{
+    @apply basis-full md:basis-1/2 mb-2
+  }
 }
 
 body,

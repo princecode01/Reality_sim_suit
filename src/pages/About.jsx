@@ -81,7 +81,7 @@ function About() {
             />
             <div className="about-card-details px-4 w-full h-0 flex justify-center items-center overflow-hidden absolute left-0 bottom-0 z-20 transition-all ease-in-out duration-400 bg-[rgba(255,125,41,0.7)] text-black">
               <div>
-                <h2 className="text-2xl text-black font-bold mb-5 text-center">
+                <h2 className="text-2xl text-black font-bold mb-3 text-center">
                   {card.name}
                 </h2>
                 <p className="font-medium mb-4 text-center">{card.description}</p>

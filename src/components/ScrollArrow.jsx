@@ -27,7 +27,7 @@ function ScrollArrow() {
 
     return (
         <>
-            <FaArrowAltCircleUp onClick={scrollToTop} color="#FF7D29" className="scrollArrow hidden fixed bottom-6 right-6 text-3xl cursor-pointer z-50" />
+            <FaArrowAltCircleUp onClick={scrollToTop} color="#FF7D29" className="scrollArrow hidden fixed bottom-6 right-3 text-3xl cursor-pointer z-50" />
         </>
     )
 }
