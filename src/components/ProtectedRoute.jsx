@@ -11,7 +11,6 @@ function ProtectedRoute({ userData, children }) {
         }
         else {
             navigate("/login")
-            return null
         }
     }, [navigate, userData, children])
 }
