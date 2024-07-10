@@ -10,7 +10,7 @@ function ProtectedRoute({ userData, children }) {
             return children;
         }
         else {
-            navigate("/login",{replace:"true"})
+            navigate("/login")
             return null
         }
     }, [navigate, userData, children])
