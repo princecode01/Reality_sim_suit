@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,7 +10,7 @@ const userSchema = z.object({
   password: z.string().min(8, "Password must be at least 8 characters"),
 });
 
-function Login() {
+function Login({saveUserData}) {
   const {
     register,
     handleSubmit,
@@ -34,6 +35,9 @@ function Login() {
         onSettled: () => {
           reset({ email: "", password: "" });
         },
+        onSuccess:()=>{
+          saveUserData()
+        }
       }
     );
   };

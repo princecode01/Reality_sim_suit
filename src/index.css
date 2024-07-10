@@ -52,7 +52,12 @@
   }
   .user-info div p,
   .session p{
-    @apply basis-full md:basis-1/2 mb-2
+    @apply basis-full md:basis-1/2 mb-2 font-bold
+  }
+  .user-info div p span,
+  .session p span{
+    @apply text-white
+  
   }
 }
 

@@ -16,12 +16,19 @@ import { useEffect, useState } from "react";
 
 
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // staleTime: 60 * 1000, // 1 minute
+      staleTime: 0, //refetch once the data has changed
+    },
+  },
+});
 
 function App() {
 
   const [userData, setUserData] = useState(null);
-  let saveUserData = () => {
+  const saveUserData = () => {
     if (localStorage.getItem('user')) {
       const user = JSON.parse(localStorage.getItem('user'));
       setUserData(user);

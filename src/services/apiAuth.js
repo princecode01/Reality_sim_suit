@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export async function login({ email, password }) {
   try {
-    const {data} = await axios.post("",{email,password});
+    const {data} = await axios.post("https://localhost:7232/api/userCreds/authenticate",{email,password});
     return data;
   } catch (error) {
     throw new Error(error.message);
