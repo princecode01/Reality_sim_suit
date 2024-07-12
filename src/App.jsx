@@ -51,7 +51,7 @@ function App() {
       path: "/",
       element: <>
         <ScrollToTop />
-        <Layout logout={logout} saveUserData={saveUserData} />
+        <Layout logout={logout} userData={userData} />
       </>,
       children: [
         {
@@ -62,7 +62,7 @@ function App() {
           path: "/about",
           element: <About />,
         },
-        { path: "/user", element: <ProtectedRoute userData={userData}><User /></ProtectedRoute> },
+        { path: "/user/:userID", element: <ProtectedRoute userData={userData}><User /></ProtectedRoute> },
         { path: "/login", element: <Login saveUserData={saveUserData} /> },
         // { path: "/signup", element: <SignUp /> },
       ],
@@ -88,8 +88,8 @@ function App() {
               fontSize: "16px",
               maxWidth: "500px",
               padding: "16px 24px",
-              backgroundColor: "#36BA98",
-              color: "#FED8B1",
+              backgroundColor: "#FED8B1",
+              color: "#6F4E37",
             },
           }} />
 

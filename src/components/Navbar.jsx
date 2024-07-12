@@ -59,16 +59,16 @@ function NavbarComponent({ logout, userData }) {
         justify="end"
         className="hidden md:flex justify-between items-center gap-4"
       >
-        <NavbarItem>
+        {!userData && <NavbarItem>
           <NavLink to="/login">Sign In</NavLink>
-        </NavbarItem>
+        </NavbarItem>}
         {/* <NavbarItem>
           <NavLink to="/signup" className="border border-white px-3 py-2">Sign Up</NavLink>
         </NavbarItem> */}
 
         {userData && <>
           <NavbarItem>
-            <FaUserCircle onClick={() => navigate("/user")} className="cursor-pointer text-xl hover:scale-110 transition-all duration-250" />
+            <FaUserCircle onClick={() => navigate(`/user/${userData}`)} className="cursor-pointer text-xl hover:scale-110 transition-all duration-250" />
           </NavbarItem>
           <NavbarItem>
             <NavLink onClick={logout}>Log Out</NavLink>

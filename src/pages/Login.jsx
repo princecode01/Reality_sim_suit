@@ -7,7 +7,7 @@ import { useLogin } from "../hooks/useLogin";
 
 const userSchema = z.object({
   email: z.string().min(1, "email is required"),
-  password: z.string().min(8, "Password must be at least 8 characters"),
+  password: z.string().min(6, "Password must be at least 6 characters"),
 });
 
 function Login({saveUserData}) {

@@ -8,7 +8,7 @@ function User() {
   const { sessions, isLoading: loadingSessions } = useSessions()
   const { user, isLoading: loadingUser } = useUser()
 
-  if (loadingSessions || loadingUser) return <div className="absolute inset-0 z-50 flex justify-center items-center h-screen text-3xl">
+  if (loadingSessions || loadingUser) return <div className="absolute inset-0 z-30 flex justify-center items-center h-screen text-3xl">
     <p>Loading...</p>
   </div>
 

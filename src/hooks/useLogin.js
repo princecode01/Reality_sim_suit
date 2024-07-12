@@ -9,8 +9,8 @@ export function useLogin() {
   const { mutate: login, isLoading: isLogging } = useMutation({
     mutationFn: ({email, password}) => apiLogin({email, password}),
     onSuccess: (user) => {
-      localStorage.setItem('user', JSON.stringify(user.user));
-      navigate("/user", { replace: true });
+      localStorage.setItem('user', JSON.stringify(user.userID));
+      navigate(`/user/${user.userID}`, { replace: true });
     },
     onError:(err) => {
       console.log("ERROR", err)

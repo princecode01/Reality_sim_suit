@@ -2,17 +2,16 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
-function ProtectedRoute({ userData, children }) {
+function ProtectedRoute({ children }) {
     const navigate = useNavigate()
 
     useEffect(() => {
-        if (userData != null || localStorage.getItem('user') != null) {
-            return children;
-        }
-        else {
+        if (localStorage.getItem('user') == null) {
             navigate("/login")
         }
-    }, [navigate, userData, children])
+
+    }, [navigate, children])
+    return children;
 }
 
 export default ProtectedRoute
