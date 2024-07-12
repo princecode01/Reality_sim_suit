@@ -13,13 +13,7 @@ import {
 } from "@nextui-org/react";
 import { FaUserCircle } from "react-icons/fa";
 
-const menuItems = [
-  { label: "Home", path: "/" },
-  { label: "About", path: "about" },
-  { label: "Login", path: "login" },
-  // { label: "Sign Up", path: "signup" },
-  { label: "Log Out", path: "/" },
-];
+
 
 function NavbarComponent({ logout, userData }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -85,20 +79,66 @@ function NavbarComponent({ logout, userData }) {
       </NavbarContent>
 
       <NavbarMenu>
-        {menuItems.map((item, index) => (
+        <NavbarMenuItem
+          className=" hover:text-light hover:bg-customBlue transition-all ease-in duration-300 cursor-pointer"
+        >
+          <NavLink
+            onClick={handleOpenToggle}
+            className="w-full block  p-3"
+            to="/"
+          >
+            Home
+          </NavLink>
+        </NavbarMenuItem>
+        <NavbarMenuItem
+          className=" hover:text-light hover:bg-customBlue transition-all ease-in duration-300 cursor-pointer"
+        >
+          <NavLink
+            onClick={handleOpenToggle}
+            className="w-full block  p-3"
+            to="/about"
+          >
+            About
+          </NavLink>
+        </NavbarMenuItem>
+        {!userData && <NavbarMenuItem
+          className=" hover:text-light hover:bg-customBlue transition-all ease-in duration-300 cursor-pointer"
+        >
+          <NavLink
+            onClick={handleOpenToggle}
+            className="w-full block  p-3"
+            to="/login"
+          >
+            Sign in
+          </NavLink>
+        </NavbarMenuItem>}
+        {userData && <>
           <NavbarMenuItem
-            key={`${item.label}-${index}`}
             className=" hover:text-light hover:bg-customBlue transition-all ease-in duration-300 cursor-pointer"
           >
             <NavLink
               onClick={handleOpenToggle}
               className="w-full block  p-3"
-              to={item.path}
+              to={`/user/${userData}`}
             >
-              {item.label}
+              Profile
             </NavLink>
           </NavbarMenuItem>
-        ))}
+          <NavbarMenuItem
+            className=" hover:text-light hover:bg-customBlue transition-all ease-in duration-300 cursor-pointer"
+          >
+            <NavLink
+              onClick={() => {
+                handleOpenToggle()
+                logout()
+              }}
+              className="w-full block  p-3"
+            >
+              Log Out
+            </NavLink>
+          </NavbarMenuItem>
+        </>
+        }
       </NavbarMenu>
     </Navbar>
   );
