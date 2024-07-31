@@ -13,7 +13,7 @@ function Contacts() {
                 toast.success('Message is sent successfully');
             },
             (error) => {
-                toast.error(error);
+                toast.error("Faild...",error);
             },
         );
         console.log("Email Sent", data)
