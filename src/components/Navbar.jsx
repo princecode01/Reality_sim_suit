@@ -45,6 +45,9 @@ function NavbarComponent({ logout, userData }) {
         <NavbarItem>
           <NavLink to="/about">About</NavLink>
         </NavbarItem>
+        <NavbarItem>
+          <NavLink to="/statistics">Stats</NavLink>
+        </NavbarItem>
 
 
       </NavbarContent>
@@ -99,6 +102,17 @@ function NavbarComponent({ logout, userData }) {
             to="/about"
           >
             About
+          </NavLink>
+        </NavbarMenuItem>
+        <NavbarMenuItem
+          className=" hover:text-light hover:bg-customBlue transition-all ease-in duration-300 cursor-pointer"
+        >
+          <NavLink
+            onClick={handleOpenToggle}
+            className="w-full block  p-3"
+            to="/statistics"
+          >
+            Stats
           </NavLink>
         </NavbarMenuItem>
         {!userData && <NavbarMenuItem

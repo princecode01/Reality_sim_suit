@@ -13,6 +13,7 @@ import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { useEffect, useState } from "react";
+import Statistics from "./pages/Statistics";
 
 
 
@@ -61,6 +62,10 @@ function App() {
         {
           path: "/about",
           element: <About />,
+        },
+        {
+          path: "/statistics",
+          element: <Statistics />,
         },
         { path: "/user/:userID", element: <ProtectedRoute userData={userData}><User /></ProtectedRoute> },
         { path: "/login", element: <Login saveUserData={saveUserData} /> },

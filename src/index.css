@@ -63,11 +63,17 @@
   .session:last-child{
     @apply border-none
   }
+
+  .stat{
+    @apply shadow-sm shadow-customBlue
+  }
 }
 
 body,
 html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
+  letter-spacing: 1px;
 }
 
 

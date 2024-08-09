@@ -3,7 +3,10 @@ function Services() {
         <section id="services" className="py-16">
             <div className="container">
                 <h3 className="text-4xl text-customBlue font-medium mb-4">Cutting-Edge services</h3>
-                <h4 className="text-2xl mb-4">Transform your reality</h4>
+                <div className="flex  items-center mb-4 justify-between">
+                    <h4 className="text-2xl">Transform your reality</h4>
+                    <a target="_blank" href="https://orsnaro.github.io/Reality-SimSuit-Arch/" className="inline-block text-xl underline underline-offset-1 hover:no-underline text-customBlue">Architecture Diagram</a>
+                </div>
                 <p className="mb-7 text-dark">Our cutting-edge services bring virtual experiences to life with the latest technology. Immerse yourself<br /> in a new dimension of entertainment and exploration.</p>
                 <div className="flex flex-wrap justify-center md:justify-between gap-y-6">
                     <div className="service-card bg-lightRed p-4 transition-all duration-300">
